@@ -4,7 +4,7 @@ export default async function PostID({params}){
     
     return(
         <>
-            <h1>Post number: {}</h1>
+            <h1>Post number: {id}</h1>
         </>
     )
 }
