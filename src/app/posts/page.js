@@ -1,3 +1,7 @@
-//static route --> '/posts'
-
-//TODO: Render a list of all posts.
+export default function Posts(){
+    return(
+        <>
+            <h1>PostsPage</h1>
+        </>
+    )
+}
