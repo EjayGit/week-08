@@ -1,0 +1,1 @@
+//dynamic route -> '/posts/:postID'

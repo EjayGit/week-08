@@ -24,3 +24,9 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Styling */
+/* Media queries go in globals.css
+Use Css for specific components
+Use tailwind for bespoke element styling
+If you use modules, store together with component, or in separate styles folder. */
