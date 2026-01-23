@@ -1,0 +1,21 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.navlink{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: #4d4d4d;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding:10px;
+    font-size: medium;
+}
+
+p a{
+    font-size: medium;
+}

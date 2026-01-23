@@ -1,10 +1,11 @@
 import Navbar from './Navbar'
+import './header.css'
 
 export default function Header(){
     return(
-        <>
-            <h1>Header</h1>
+        <div className='header'>
+            <h1>Blog your Holiday</h1>
             <Navbar/>
-        </>
+        </div>
     )
 }

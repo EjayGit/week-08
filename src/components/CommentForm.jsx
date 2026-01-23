@@ -1,25 +1,24 @@
 import { db } from "@/utils/dbConnection";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import './postform.css'
 
-export default function PostForm(){
+export default async function PostForm({id}){
 
     async function handleFormSubmit(rawFormData){
         "use server";
         // console.log(rawFormData);
         const formValues = {
             name: rawFormData.get("name"),
-            location: rawFormData.get("location"),
-            post: rawFormData.get("post"),
+            comment: rawFormData.get("comment"),
+            id: Number(id),
         }
         // console.log(formValues);
 
-        db.query(`INSERT INTO postboard (name, location, message) VALUES ($1, $2, $3)`,
+        db.query(`INSERT INTO commentboard (name, comment, postid) VALUES ($1, $2, $3)`,
             [
                 formValues.name,
-                formValues.location,
-                formValues.post
+                formValues.comment,
+                formValues.id
             ],
         );
         revalidatePath('/posts');
@@ -32,13 +31,10 @@ export default function PostForm(){
                 <label className='form-name' htmlFor="name">Name: </label>
                 <input id='form-name' type="text" name='name' placeholder="Name"/>
 
-                <label className='form-name' htmlFor="location">Location: </label>
-                <input id='form-name' type="text" name='location' maxLength={255} placeholder="Location" />
-
-                <label className='form-post' htmlFor="post">Blog post: </label>
-                <textarea id='form-post' type="text" name='post' rows="4" cols="30" placeholder="Blog"/>
+                <label className='form-post' htmlFor="comment">Blog post: </label>
+                <textarea id='form-post' type="text" name='comment' rows="4" cols="30" placeholder="Comment"/>
                 
-                <button>Submit</button>
+                <button className="bg-amber-600">Submit</button>
             </form>
         </div>
     )
