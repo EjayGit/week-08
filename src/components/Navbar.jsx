@@ -1,7 +1,10 @@
+import Link from 'next/link'
+
 export default function Navbar(){
     return(
         <>
-            <h1>Navbar</h1>
+            <Link href={'/'}>Home</Link>&nbsp;
+            <Link href={'/posts'}>Posts</Link>&nbsp;
         </>
     )
 }

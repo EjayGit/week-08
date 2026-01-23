@@ -1,40 +1,46 @@
-import Link from 'next/link'
+import Link from "next/link";
 import Header from '@/components/Header'
+import PostForm from '@/components/PostForm'
+import { db } from "@/utils/dbConnection";
 
-export default async function Posts({searchParams}){
-    
-    const queryString = await searchParams;
-    const response = await fetch("https://dummyjson.com/users");
-    const data = await response.json();
-    const {users} = data;
+export default async function UsersPage({ searchParams }) {
+  //searchParams is async
+  const queryString = await searchParams;
 
-    if (queryString.sort === 'desc'){
-        users.sort((a,b) => {
-            return b.firstName.localeCompare(a.firstName);
-        });
-    } else if(queryString.sort === "asc"){
-        users.sort((a,b) => {
-            return a.firstName.localeCompare(b.firstName);
-        });
-    }
+  //no use of effect or state, as we are in the server
+  const {rows} = await db.query(`SELECT * FROM postboard`);
+  console.log(rows);
 
-    return(
-        <>
-            <Header/>
-            <h1>PostsPage</h1>
-            <Link href={"/posts?sort=asc"}>ASC</Link>
-            <Link href={"/posts?sort=desc"}>DESC</Link>
-            {/* SELECT * posts 
-            Make each post a button
-            Once post has been clicked, take id and goto new route with that id*/}
-            {users.map((user) => {
-                return (
-                    <div key={user.id}>
-                        <Link href={`/posts/${users.id}`} className='text-emerald-600'>{users.firstName} {users.lastName}</Link>
-                    </div>
-                );
-            })}
-            
-        </>
-    );
+  //sorting logic --> this logic sorts our users in alphabetical order
+  if (queryString.sort === "desc") {
+    rows.sort((a, b) => {
+      return b.location.localeCompare(a.location);
+    });
+  } else if (queryString.sort === "asc") {
+    rows.sort((a, b) => {
+      return a.location.localeCompare(b.location);
+    });
+  }
+
+  return (
+    <>
+      <h1>Posts Page</h1>
+      <Header/>
+
+      <PostForm/>
+
+      <Link href={"/posts?sort=asc"}>ASC</Link>
+      <Link href={"/posts?sort=desc"}>DESC</Link>
+
+      {rows.map((post) => {
+        return (
+          <div key={post.id}>
+            <Link href={`/posts/${post.id}`} className="text-emerald-600">
+              {post.name} {post.location} {post.message}
+            </Link>
+          </div>
+        );
+      })}
+    </>
+  );
 }
