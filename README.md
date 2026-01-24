@@ -11,22 +11,19 @@
 ## Requirements
 
     🎯 Display all posts on the page, with an option to sort them in ascending or descending order.
+    Completed
     🎯 Create a SQL schema for a posts table and a comments table, with the comments being connected to the posts table with a foreign key.
+    Completed
         Please submit your database schema, as is mentioned in the submission instructions.
     🎯 Create a delete button on posts that allows users to delete the comment from the database.
+    Completed
     🎯 Create a form which saves comments to a dedicated comments table, with the comments being connected to the posts table with a foreign key.
+    Completed
     🎯 Allow users to comment on individual posts in their dynamic routes. Comments should be associated with posts, and have a dynamic route (e.g. /posts/:postid).
-    🎯 Add a redirect when a user creates a post to redirect them to the posts page.
+    Completed
+    🎯 Add a redirect when a user creates a comment to redirect them to the posts page.
+    Completed
 
-## How to Deploy
-
-Next.js was developed by Vercel, which is where we’re going to deploy our app, so some of the difficulties faced when deploying are reduced.
-
-    Ensure that any data displayed using .map() has a key.
-    Push everything to GitHub.
-    Click ‘Add New…’ and then select ‘Project’.
-    In the ‘Environment Variables’ drop-down menu, add anything from your .env.local file here.
-    Wait a minute or so, and your website is deployed!
 
 ## Stretch Goals
 

@@ -1,5 +1,7 @@
 import {db} from '@/utils/dbConnection'
 import './delbtn.css'
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 
 export default function DeletePost({id}){
 
