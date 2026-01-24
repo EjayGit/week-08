@@ -1,0 +1,49 @@
+form{
+    border: 4px darkslategrey ridge;
+    padding: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+form button{
+    background-color: rgb(176, 205, 207);
+    color:rgb(7, 31, 51);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#form-name{
+    background-color:rgba(245, 222, 179, 0.705);
+    border-radius: 5px;
+    height: 25px;
+    width: 200px;
+}
+
+#form-post{
+    background-color:rgba(245, 222, 179, 0.705);
+    border-radius: 5px;
+    height: 60px;
+    margin: 10px;
+}
+
+form button:hover{
+    scale: 1.05;
+}
+
+form button:active{
+    scale: 1.00;
+}
+
+.form-name{
+    color: rgb(70, 70, 70);
+    font-weight: bold;
+}
+
+.form-post{
+    color: rgb(70, 70, 70);
+    font-weight: bold;
+}

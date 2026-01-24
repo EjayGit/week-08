@@ -50,8 +50,34 @@ img{
     border-radius: 20px;
 }
 
-/* Styling */
-/* Media queries go in globals.css
-Use Css for specific components
-Use tailwind for bespoke element styling
-If you use modules, store together with component, or in separate styles folder. */
+.post-data{
+    gap: 15px;
+    border-radius: 20px;
+    margin: 20px;
+    padding:15px;
+}
+
+.name{
+    font-size: large;
+}
+
+.location{
+    font-size: large;
+}
+
+.message{
+    font-size: medium;
+    margin: 20px;
+}
+
+.ind-post{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.comment-name{
+    font-size: large;
+    margin-top: 20px;
+}
+

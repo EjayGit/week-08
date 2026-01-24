@@ -27,13 +27,12 @@ export default async function UsersPage({ searchParams }) {
     <>
       <Header/>
       <PostForm/>
-      <Link href={"/posts?sort=asc"}>ASC</Link>
-      <Link href={"/posts?sort=desc"}>DESC</Link>
+      <Link href={"/posts?sort=asc"}>Asc</Link> | <Link href={"/posts?sort=desc"}>Desc</Link>
       {rows.map((post) => {
         return (
           <div key={post.id}>
-            <Link href={`/posts/${post.id}`} className="text-cyan-500">
-              {post.name} {post.location} {post.message}
+            <Link href={`/posts/${post.id}`} className="post-data">
+              <p className='name'>{post.name}</p> <p className='location'>{post.location}</p> <p className='message'>{post.message}</p>
             </Link>
           </div>
         );

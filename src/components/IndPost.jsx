@@ -7,10 +7,9 @@ export default async function IndPost(id){
     ]);
     // console.log(rows[0]);
     return(
-        <>
-            <h1>Ind post</h1>
-            {rows[0].name} {rows[0].location} {rows[0].message}
+        <div className='ind-post'>
+            <p className='comment-name'>{rows[0].name}</p> <p className='location'>{rows[0].location}</p> <p className='message'>{rows[0].message}</p>
 
-        </>
+        </div>
     )
 }

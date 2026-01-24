@@ -34,7 +34,7 @@ export default async function PostForm({id}){
                 <label className='form-post' htmlFor="comment">Blog post: </label>
                 <textarea id='form-post' type="text" name='comment' rows="4" cols="30" placeholder="Comment"/>
                 
-                <button className="bg-amber-600">Submit</button>
+                <button>Submit</button>
             </form>
         </div>
     )

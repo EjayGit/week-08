@@ -11,8 +11,8 @@ export default async function ShowComments({id}){
         <>
         {rows.map((comment) => {
             return (
-            <div key={comment.id}>
-                {comment.name} {comment.comment}
+            <div className='post-data' key={comment.id}>
+                <p className='name'>{comment.name}</p> <p className='message'>{comment.comment}</p>
                 <DeletePost id={comment.id}/>
             </div>
             );

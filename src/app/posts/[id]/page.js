@@ -12,7 +12,6 @@ export default async function postId({params}){
     return(
         <>
             <Header/>
-            <h1>Post number: {id}</h1>
             <IndPost postData={id}/>
             <CommentForm id={id}/>
             <ShowComments id={id}/>

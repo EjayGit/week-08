@@ -1,4 +1,5 @@
 import {db} from '@/utils/dbConnection'
+import './delbtn.css'
 
 export default function DeletePost({id}){
 
@@ -11,7 +12,7 @@ export default function DeletePost({id}){
     }
 
     return(
-        <div>
+        <div className='delBtnContainer'>
             <button className='delBtn' onClick={deleteHandler}>Delete</button>
         </div>
     )
